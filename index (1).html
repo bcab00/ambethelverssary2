@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Alia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light dark;
+--bg:light-dark(#fbe3e8,#2a1430);--paper:light-dark(#fff7f8,#3a1d42);--ink:light-dark(#3d1340,#fbe3ef);
+--soft:light-dark(#8a5a8e,#d6aedb);--gold:light-dark(#e0a526,#f5c451);--plum:light-dark(#6d2a72,#e58ae8);--line:light-dark(#efc6d1,#5c3466)}
+*{box-sizing:border-box;min-width:0}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip;
+background-image:radial-gradient(circle at 20% 10%,light-dark(#fff0f3,#3b1a44) 0,transparent 45%),radial-gradient(circle at 85% 90%,light-dark(#f7cfd9,#1d0b22) 0,transparent 50%)}
+.screen{min-height:100svh;display:grid;place-items:center;padding:24px max(5vw,16px)}
+[hidden]{display:none!important}
+.letter{width:min(520px,100%);background:var(--paper);border:1px solid var(--line);border-radius:6px;
+padding:clamp(28px,6vw,52px);box-shadow:0 1px 0 var(--line),0 24px 60px -20px light-dark(#c97b8f88,#00000099);
+position:relative;transform:rotate(-1deg);background-image:repeating-linear-gradient(transparent 0 35px,var(--line) 35px 36px);background-position:0 18px}
+.letter::after{content:"";position:absolute;right:22px;top:-14px;width:46px;height:46px;border-radius:50%;
+background:radial-gradient(circle at 35% 35%,#e46a83,#a3203e);box-shadow:0 3px 8px #0004}
+.greet{font:700 clamp(48px,12vw,76px)/1.05 "Dancing Script",cursive;color:var(--plum);margin:0 0 28px}
+.hint{color:var(--soft);margin:0 0 10px;font-size:15px}
+form{display:flex;gap:10px;flex-wrap:wrap}
+input{flex:1 1 180px;font:16px Nunito,sans-serif;padding:12px 14px;min-height:48px;border-radius:10px;border:1.5px solid var(--line);background:light-dark(#fff,#2a1430);color:var(--ink)}
+input:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+button{font:700 16px Nunito,sans-serif;min-height:48px;padding:0 22px;border:0;border-radius:10px;background:var(--plum);color:light-dark(#fff,#2a1430);cursor:pointer}
+button:hover{filter:brightness(1.08)}
+.err{color:light-dark(#b3203e,#ff9aae);font-size:14px;min-height:22px;margin:8px 0 0}
+.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-8px) rotate(-1deg)}40%,80%{transform:translateX(8px) rotate(-1deg)}}
+#party{position:relative;overflow:hidden}
+.stage{width:min(760px,100%);display:grid;justify-items:center;gap:8px;text-align:center;position:relative;z-index:2}
+.bubble{position:relative;background:var(--paper);border:3px solid var(--ink);border-radius:28px;padding:22px 28px;max-width:560px;
+font:600 clamp(20px,4.6vw,28px)/1.3 Fredoka,sans-serif;opacity:0;transform:scale(.6) translateY(20px);transform-origin:30% 100%}
+.bubble::after{content:"";position:absolute;left:28%;bottom:-24px;width:30px;height:30px;background:var(--paper);
+border-right:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:skewX(25deg) rotate(45deg)}
+.bubble .big{display:block;margin-top:8px;font:700 clamp(36px,9vw,60px)/1.05 Fredoka,sans-serif;color:var(--plum);letter-spacing:.5px}
+.show .bubble{animation:pop .5s cubic-bezier(.3,1.6,.5,1) .3s forwards}
+.show .big{animation:yell .6s ease-in-out 1.4s 3}
+@keyframes pop{to{opacity:1;transform:none}}
+@keyframes yell{50%{transform:scale(1.15) rotate(-3deg)}}
+.guy{width:min(300px,70vw);height:auto;margin-top:14px;overflow:visible}
+.show .body{animation:bounce .9s ease-in-out infinite;transform-origin:150px 300px}
+.show .armL{animation:flailL .9s ease-in-out infinite;transform-origin:92px 190px}
+.show .armR{animation:flailR .9s ease-in-out infinite;transform-origin:208px 190px}
+.show .hat{animation:hat .9s ease-in-out infinite;transform-origin:150px 80px}
+.show .brow{animation:brow .9s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0) scale(1,1)}45%{transform:translateY(-34px) scale(.97,1.03)}90%{transform:translateY(0) scale(1.05,.95)}}
+@keyframes flailL{0%,100%{transform:rotate(10deg)}45%{transform:rotate(-120deg)}}
+@keyframes flailR{0%,100%{transform:rotate(-10deg)}45%{transform:rotate(120deg)}}
+@keyframes hat{0%,100%{transform:rotate(-6deg)}45%{transform:rotate(10deg) translateY(-10px)}}
+@keyframes brow{0%,100%{transform:translateY(0)}45%{transform:translateY(-6px)}}
+.show .shadow{animation:shrink .9s ease-in-out infinite;transform-origin:150px 318px}
+@keyframes shrink{45%{transform:scaleX(.7);opacity:.5}}
+.sign{font:700 clamp(30px,7vw,46px)/1.1 "Dancing Script",cursive;color:var(--plum);margin:18px 0 4px}
+.sub{color:var(--soft);margin:0 0 16px}
+#again{background:var(--gold);color:#3d1340}
+#gift{background:none;padding:0;min-height:0;display:grid;justify-items:center;gap:6px;color:var(--plum);font:700 15px Nunito,sans-serif}
+#gift svg{width:110px;height:110px;animation:wiggle 1.6s ease-in-out infinite;transform-origin:50% 90%}
+#gift.in{animation:popin .5s cubic-bezier(.3,1.6,.5,1)}
+@keyframes popin{from{transform:scale(0)}to{transform:none}}
+@keyframes wiggle{0%,60%,100%{transform:rotate(0)}70%{transform:rotate(-8deg)}80%{transform:rotate(8deg)}90%{transform:rotate(-4deg)}}
+#reveal .card{width:min(440px,100%);background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:clamp(26px,6vw,44px);text-align:center;box-shadow:0 24px 60px -20px light-dark(#c97b8f88,#00000099);animation:popin .6s cubic-bezier(.3,1.4,.5,1)}
+#reveal svg{width:150px;height:auto;margin:0 auto 6px;display:block}
+#reveal .steam path{animation:steam 2.4s ease-in-out infinite;opacity:.6}
+#reveal .steam path:nth-child(2){animation-delay:.8s}
+@keyframes steam{0%,100%{transform:translateY(0);opacity:0}40%{opacity:.7}100%{transform:translateY(-14px)}}
+.msg{font:700 clamp(30px,7vw,42px)/1.1 "Dancing Script",cursive;color:var(--plum);margin:6px 0 10px}
+.gc{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:999px;background:#1e6b46;color:#fff;font:700 16px Nunito,sans-serif;text-decoration:none;margin-top:8px}
+.gc:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.back{background:none;color:var(--soft);font-weight:600;margin-top:10px}
+#nope{display:block;margin:14px auto 0;background:light-dark(#efe1ea,#4a2652);color:var(--ink);font-weight:600;z-index:6;transition:left .35s cubic-bezier(.3,1.4,.5,1),top .35s cubic-bezier(.3,1.4,.5,1),opacity .5s,transform .5s}
+#nope.run{position:fixed;margin:0}
+#nope.gun{padding:6px 10px;background:none}
+#nope.gun svg{width:96px;height:auto;display:block;animation:wiggle 1.2s ease-in-out infinite}
+#nope.fine{background:var(--gold);color:#3d1340}
+#nope.gone{opacity:0;transform:scale(.3);pointer-events:none}
+canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+@media(prefers-reduced-motion:reduce){#nope.gun svg,#gift svg,#reveal .steam path,.show .body,.show .armL,.show .armR,.show .hat,.show .brow,.show .shadow,.show .big{animation:none}.show .bubble{animation:pop .01s forwards}}
+</style>
+</head>
+<body>
+
+<section class="screen" id="gate">
+  <div class="letter" id="letter">
+    <h1 class="greet">Alia,</h1>
+    <p class="hint">This one is just for you. Enter the password to open it.<br>(Clue: the date you started full-time Bethel service, MMDDYYYY)</p>
+    <form id="f" autocomplete="off">
+      <label for="pw" class="hint" style="position:absolute;left:-9999px">Password</label>
+      <input id="pw" type="password" placeholder="MMDDYYYY" inputmode="numeric" autocapitalize="none" spellcheck="false">
+      <button type="submit">Open</button>
+    </form>
+    <p class="err" id="err" aria-live="polite"></p>
+  </div>
+</section>
+
+<section class="screen" id="party" hidden>
+  <div class="stage" id="stage">
+    <div class="bubble">You have been in Bethel for two years already?<span class="big">Inconceivable!</span></div>
+
+    <svg class="guy" viewBox="0 0 300 330" aria-label="A little round cartoon fellow in a party hat, jumping with excitement">
+      <defs>
+        <radialGradient id="skin" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#ffd9b8"/><stop offset="1" stop-color="#e9a77f"/></radialGradient>
+        <linearGradient id="suit" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8e3a94"/><stop offset="1" stop-color="#5a1c60"/></linearGradient>
+        <linearGradient id="hatg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#e09a16"/></linearGradient>
+      </defs>
+      <ellipse class="shadow" cx="150" cy="318" rx="70" ry="9" fill="#00000022"/>
+      <g class="body">
+        <rect x="118" y="268" width="18" height="40" rx="9" fill="#3d1340"/>
+        <rect x="164" y="268" width="18" height="40" rx="9" fill="#3d1340"/>
+        <ellipse cx="124" cy="308" rx="18" ry="9" fill="#2a0c2c"/>
+        <ellipse cx="176" cy="308" rx="18" ry="9" fill="#2a0c2c"/>
+        <g class="armL"><rect x="40" y="182" width="56" height="18" rx="9" fill="url(#suit)"/><circle cx="40" cy="191" r="13" fill="url(#skin)"/></g>
+        <g class="armR"><rect x="204" y="182" width="56" height="18" rx="9" fill="url(#suit)"/><circle cx="260" cy="191" r="13" fill="url(#skin)"/></g>
+        <ellipse cx="150" cy="215" rx="66" ry="64" fill="url(#suit)"/>
+        <ellipse cx="128" cy="190" rx="22" ry="14" fill="#ffffff22"/>
+        <circle cx="150" cy="205" r="5" fill="#ffd166"/><circle cx="150" cy="227" r="5" fill="#ffd166"/><circle cx="150" cy="249" r="5" fill="#ffd166"/>
+        <path d="M150 154 l-22 -12 v24 z M150 154 l22 -12 v24 z" fill="#e0a526"/><circle cx="150" cy="154" r="6" fill="#b87d0a"/>
+        <circle cx="150" cy="112" r="48" fill="url(#skin)"/>
+        <circle cx="114" cy="124" r="9" fill="#f28b9b" opacity=".7"/><circle cx="186" cy="124" r="9" fill="#f28b9b" opacity=".7"/>
+        <circle cx="133" cy="106" r="10" fill="#fff"/><circle cx="167" cy="106" r="10" fill="#fff"/>
+        <circle cx="134" cy="108" r="5" fill="#2a0c2c"/><circle cx="168" cy="108" r="5" fill="#2a0c2c"/>
+        <g class="brow"><path d="M121 88 q12 -10 24 -2" stroke="#3d1340" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M155 86 q12 -8 24 2" stroke="#3d1340" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        <ellipse cx="150" cy="134" rx="12" ry="10" fill="#7a1f2e"/><ellipse cx="150" cy="139" rx="7" ry="4" fill="#ff8b9b"/>
+        <g class="hat">
+          <path d="M120 74 L150 10 L180 74 Z" fill="url(#hatg)"/>
+          <path d="M133 46 l34 0 M126 60 l48 0" stroke="#6d2a72" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="150" cy="10" r="9" fill="#e46a83"/>
+          <ellipse cx="150" cy="74" rx="32" ry="6" fill="#c9870f"/>
+        </g>
+      </g>
+    </svg>
+
+    <p class="sign">Happy Bethelversary!</p>
+    <p class="sub" style="margin-bottom:4px">Two years down, and so proud of you.</p>
+    <p class="sub" style="font-size:15px;font-weight:700;color:var(--plum)">Throw some confetti! (tap twice)</p>
+    <button id="again" type="button">More confetti</button>
+    <button id="gift" type="button" hidden aria-label="Open your gift">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <ellipse cx="60" cy="112" rx="40" ry="5" fill="#00000022"/>
+        <rect x="22" y="52" width="76" height="58" rx="6" fill="#8e3a94"/>
+        <rect x="22" y="52" width="76" height="12" fill="#ffffff22"/>
+        <rect x="16" y="40" width="88" height="18" rx="5" fill="#a64aac"/>
+        <rect x="53" y="40" width="14" height="70" fill="#e0a526"/>
+        <path d="M60 40 C40 18 22 30 34 40 Z M60 40 C80 18 98 30 86 40 Z" fill="#ffd166" stroke="#c9870f" stroke-width="2"/>
+        <circle cx="60" cy="40" r="7" fill="#e0a526"/>
+      </svg>
+      Tap your gift
+    </button>
+  </div>
+</section>
+
+<section class="screen" id="reveal" hidden>
+  <div class="card">
+    <svg viewBox="0 0 160 170" aria-label="A warm cup of coffee">
+      <g class="steam" stroke="var(--soft)" stroke-width="5" fill="none" stroke-linecap="round"><path d="M66 40 q-10 -12 0 -24 q10 -12 0 -24" transform="translate(0 20)"/><path d="M94 40 q-10 -12 0 -24 q10 -12 0 -24" transform="translate(0 20)"/></g>
+      <ellipse cx="80" cy="160" rx="52" ry="6" fill="#00000022"/>
+      <path d="M40 66 h80 l-8 88 a6 6 0 0 1 -6 6 h-52 a6 6 0 0 1 -6 -6 z" fill="#fff7f8" stroke="#3d1340" stroke-width="3"/>
+      <rect x="34" y="56" width="92" height="14" rx="5" fill="#3d1340"/>
+      <path d="M43 96 h74 l-3 32 h-68 z" fill="#1e6b46"/>
+      <path d="M80 104 l3 6 6 1 -4.5 4 1 6 -5.5 -3 -5.5 3 1 -6 -4.5 -4 6 -1 z" fill="#ffd166"/>
+    </svg>
+    <p class="msg">A little pick me up on me!</p>
+    <p class="sub">Here's a Starbucks gift card. Enjoy your next coffee break.</p>
+    <a class="gc" id="gclink" href="#" target="_blank" rel="noopener">Open your gift card</a>
+    <button id="nope" type="button">I don't want it</button>
+    <button class="back" id="back" type="button">Back to the party</button>
+    <p class="sub" id="dare" style="font-size:14px;margin:14px 0 0;font-style:italic">Press "I don't want it"... I dare you.</p>
+  </div>
+</section>
+
+<canvas id="confetti"></canvas>
+
+<script>
+{
+  const HASH = '3378766e0be50a5c4e367bb48841074b1752fb0b9acb484dd8a07b32500d2fa4';
+  const gate = document.getElementById('gate'), party = document.getElementById('party');
+  const stage = document.getElementById('stage'), letter = document.getElementById('letter');
+  const pw = document.getElementById('pw'), err = document.getElementById('err');
+
+  const sha = async s => {
+    const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+    return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
+  };
+
+  const open = () => {
+    gate.hidden = true; party.hidden = false;
+    requestAnimationFrame(() => stage.classList.add('show'));
+    setTimeout(() => burst(260), 1300);
+    setTimeout(() => burst(160), 2600);
+  };
+
+  document.getElementById('f').addEventListener('submit', async e => {
+    e.preventDefault();
+    let v = pw.value.trim().toLowerCase();
+    const digits = v.replace(/\D/g, '');
+    if (digits.length === 8) v = digits;
+    let ok = false;
+    try { ok = (await sha(v)) === HASH; } catch (_) { ok = false; }
+    if (ok) { open(); }
+    else {
+      err.textContent = 'Not quite. Try again!';
+      letter.classList.remove('shake'); void letter.offsetWidth; letter.classList.add('shake');
+      pw.select();
+    }
+  });
+
+  const cv = document.getElementById('confetti'), cx = cv.getContext('2d');
+  const colors = ['#e0a526', '#ffd166', '#e46a83', '#8e3a94', '#e58ae8', '#ffffff', '#5bc0eb'];
+  let parts = [], running = false;
+  const size = () => { const d = devicePixelRatio || 1; cv.width = innerWidth * d; cv.height = innerHeight * d; cx.setTransform(d, 0, 0, d, 0, 0); };
+  size(); addEventListener('resize', size);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function burst(n) {
+    if (reduce) n = Math.round(n / 4);
+    const W = innerWidth, H = innerHeight;
+    for (let i = 0; i < n; i++) {
+      const fromLeft = i % 2 === 0;
+      parts.push({
+        x: fromLeft ? -10 : W + 10, y: H * (0.55 + Math.random() * 0.3),
+        vx: (fromLeft ? 1 : -1) * (4 + Math.random() * 9), vy: -(9 + Math.random() * 11),
+        w: 6 + Math.random() * 7, h: 8 + Math.random() * 10,
+        r: Math.random() * 6.28, vr: (Math.random() - 0.5) * 0.35,
+        c: colors[(Math.random() * colors.length) | 0], life: 0
+      });
+    }
+    if (!running) { running = true; requestAnimationFrame(tick); }
+  }
+  function tick() {
+    const W = innerWidth, H = innerHeight;
+    cx.clearRect(0, 0, W, H);
+    parts = parts.filter(p => p.y < H + 40 && p.life < 600);
+    for (const p of parts) {
+      p.life++; p.vy += 0.28; p.vx *= 0.985; p.vy *= 0.99;
+      p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r);
+      cx.scale(1, Math.cos(p.life * 0.15));
+      cx.fillStyle = p.c; cx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+      cx.restore();
+    }
+    if (parts.length) requestAnimationFrame(tick); else { running = false; cx.clearRect(0, 0, W, H); }
+  }
+
+  // Gift card link goes between the quotes below
+  const GIFT_URL = '';
+  const again = document.getElementById('again'), gift = document.getElementById('gift');
+  const reveal = document.getElementById('reveal'), gl = document.getElementById('gclink');
+  if (GIFT_URL) gl.href = GIFT_URL; else { gl.removeAttribute('href'); gl.textContent = 'Gift card link coming soon'; }
+  let throws = 0;
+  again.addEventListener('click', () => {
+    burst(220); throws++;
+    if (throws >= 2) setTimeout(() => { again.hidden = true; gift.hidden = false; gift.classList.add('in'); }, 400);
+  });
+  gift.addEventListener('click', () => {
+    burst(300); party.hidden = true; reveal.hidden = false; scrollTo(0, 0);
+  });
+  const nope = document.getElementById('nope');
+  const GUN = '<svg viewBox="0 0 120 70" aria-label="A cartoon toy pistol"><path d="M8 14 h84 a6 6 0 0 1 6 6 v12 a6 6 0 0 1 -6 6 h-44 l-8 26 a4 4 0 0 1 -4 3 h-18 a4 4 0 0 1 -4 -5 l8 -24 h-14 a6 6 0 0 1 -6 -6 v-12 a6 6 0 0 1 6 -6 z" fill="#5bc0eb" stroke="#3d1340" stroke-width="3"/><rect x="92" y="18" width="22" height="16" rx="3" fill="#ff8a3d" stroke="#3d1340" stroke-width="3"/><path d="M44 38 q6 14 -6 16" fill="none" stroke="#3d1340" stroke-width="3" stroke-linecap="round"/><circle cx="22" cy="26" r="4" fill="#ffd166"/></svg>';
+  let nopes = 0;
+  const hop = () => {
+    const r = nope.getBoundingClientRect();
+    nope.classList.add('run');
+    const maxX = Math.max(8, innerWidth - r.width - 8), maxY = Math.max(8, innerHeight - r.height - 8);
+    nope.style.left = (8 + Math.random() * (maxX - 8)) + 'px';
+    nope.style.top = (8 + Math.random() * (maxY - 8)) + 'px';
+  };
+  nope.addEventListener('click', () => {
+    nopes++;
+    if (nopes < 3) hop();
+    else if (nopes === 3) { nope.classList.add('gun'); nope.innerHTML = GUN; nope.setAttribute('aria-label', 'Toy pistol'); hop(); }
+    else if (nopes === 4) {
+      nope.classList.remove('gun'); nope.classList.add('fine'); nope.textContent = "Fine, I'll take it!";
+      setTimeout(() => nope.classList.add('gone'), 1400);
+      setTimeout(() => { nope.hidden = true; document.getElementById('dare').hidden = true; }, 2000);
+    }
+  });
+  document.getElementById('back').addEventListener('click', () => { reveal.hidden = true; party.hidden = false; });
+}
+</script>
+</body>
+</html>
