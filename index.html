@@ -169,7 +169,7 @@ canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:non
     <a class="gc" id="gclink" href="#" target="_blank" rel="noopener">Open your gift card</a>
     <button id="nope" type="button">I don't want it</button>
     <button class="back" id="back" type="button">Back to the party</button>
-    <p class="sub" id="dare" style="font-size:14px;margin:14px 0 0;font-style:italic">Press "I don't want it"... I dare you.</p>
+    <p class="sub" id="dare" style="font-size:14px;margin:14px 0 0;font-style:italic">Press "I don't want it"... I dare you. (keep on clicking 😉)</p>
   </div>
 </section>
 
@@ -247,7 +247,7 @@ canvas#confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:non
   }
 
   // Gift card link goes between the quotes below
-  const GIFT_URL = '';
+  const GIFT_URL = 'https://starbucks.cashstar.com/gift-card/view/yNrJqlqjCXe22KUivWnq3UTzf/ppFuS4/';
   const again = document.getElementById('again'), gift = document.getElementById('gift');
   const reveal = document.getElementById('reveal'), gl = document.getElementById('gclink');
   if (GIFT_URL) gl.href = GIFT_URL; else { gl.removeAttribute('href'); gl.textContent = 'Gift card link coming soon'; }
